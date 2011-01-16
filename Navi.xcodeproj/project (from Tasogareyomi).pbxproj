@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* CompassAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CompassAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* CompassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* CompassViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* CompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* CompassViewController.m */; };
+		AC07242E10902AAC00C46C5E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC07242D10902AAC00C46C5E /* CoreLocation.framework */; };
+		AC1AF8351106E858007513EF /* icon3030_35.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1AF8341106E858007513EF /* icon3030_35.png */; };
+		AC1AF83B1106E9F6007513EF /* icon3030_35B.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1AF83A1106E9F6007513EF /* icon3030_35B.png */; };
+		AC4C65FB11149FA0004A40DE /* icon3030_62B.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4C65FA11149FA0004A40DE /* icon3030_62B.png */; };
+		AC5998C410FF650700F747B2 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5998C110FF650700F747B2 /* MyAnnotation.m */; };
+		AC5998C510FF650700F747B2 /* myConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5998C310FF650700F747B2 /* myConnection.m */; };
+		AC5F531610DA750700C7BFB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5F531510DA750700C7BFB9 /* MapKit.framework */; };
+		AC630A9F11093C37007BE6DB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC630A9711093C37007BE6DB /* AddressBook.framework */; };
+		AC7451A911132F5E00A9265A /* icon3030_50B.png in Resources */ = {isa = PBXBuildFile; fileRef = AC7451A811132F5E00A9265A /* icon3030_50B.png */; };
+		AC76D87C110B73720077CB41 /* icon3030_64B.png in Resources */ = {isa = PBXBuildFile; fileRef = AC76D87B110B73720077CB41 /* icon3030_64B.png */; };
+		AC79514B11151F7300F47E34 /* libAdMobDevice3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC79514111151F5900F47E34 /* libAdMobDevice3_0.a */; };
+		AC79514D11151F7400F47E34 /* AdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC79514611151F5900F47E34 /* AdViewController.m */; };
+		AC79514E11151F7400F47E34 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC79514711151F5F00F47E34 /* AudioToolbox.framework */; };
+		AC79514F11151F7400F47E34 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC79514811151F6900F47E34 /* MediaPlayer.framework */; };
+		AC79515011151F7400F47E34 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC79514911151F6B00F47E34 /* MessageUI.framework */; };
+		AC79515111151F7400F47E34 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC79514A11151F7300F47E34 /* QuartzCore.framework */; };
+		AC86D0411112FB910076173E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC86D0401112FB910076173E /* AddressBookUI.framework */; };
+		ACA12F4C10E5FBDF0044B9FA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA12F4B10E5FBDF0044B9FA /* Default.png */; };
+		ACD4E5371090C26700B739F4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD4E5361090C26700B739F4 /* icon.png */; };
+		ACD4F99010E73FA2003A89B0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD4F98F10E73FA2003A89B0 /* SystemConfiguration.framework */; };
+		ACD4F99510E73FBB003A89B0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD4F99410E73FBB003A89B0 /* Reachability.m */; };
+		ACFA845B1102F8CD00C78121 /* arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = ACFA845A1102F8CD00C78121 /* arrows.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* CompassAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompassAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* CompassAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompassAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Navi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* CompassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompassViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* CompassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompassViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* CompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompassViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Navi_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navi_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Compass-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Compass-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		AC07242D10902AAC00C46C5E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AC1AF8341106E858007513EF /* icon3030_35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3030_35.png; sourceTree = "<group>"; };
+		AC1AF83A1106E9F6007513EF /* icon3030_35B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3030_35B.png; sourceTree = "<group>"; };
+		AC417641110B1AB800510C96 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AC4C65FA11149FA0004A40DE /* icon3030_62B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3030_62B.png; sourceTree = "<group>"; };
+		AC5998C010FF650700F747B2 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		AC5998C110FF650700F747B2 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
+		AC5998C210FF650700F747B2 /* myConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myConnection.h; sourceTree = "<group>"; };
+		AC5998C310FF650700F747B2 /* myConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myConnection.m; sourceTree = "<group>"; };
+		AC5F531510DA750700C7BFB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AC630A9711093C37007BE6DB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = Classes/AdMob/AddressBook.framework; sourceTree = "<group>"; };
+		AC7451A811132F5E00A9265A /* icon3030_50B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3030_50B.png; sourceTree = "<group>"; };
+		AC76D87B110B73720077CB41 /* icon3030_64B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3030_64B.png; sourceTree = "<group>"; };
+		AC79514111151F5900F47E34 /* libAdMobDevice3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMobDevice3_0.a; sourceTree = "<group>"; };
+		AC79514211151F5900F47E34 /* libAdMobSimulator3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMobSimulator3_0.a; sourceTree = "<group>"; };
+		AC79514311151F5900F47E34 /* AdMobDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobDelegateProtocol.h; sourceTree = "<group>"; };
+		AC79514411151F5900F47E34 /* AdMobView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobView.h; sourceTree = "<group>"; };
+		AC79514511151F5900F47E34 /* AdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdViewController.h; sourceTree = "<group>"; };
+		AC79514611151F5900F47E34 /* AdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdViewController.m; sourceTree = "<group>"; };
+		AC79514711151F5F00F47E34 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioToolbox.framework; sourceTree = "<group>"; };
+		AC79514811151F6900F47E34 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MediaPlayer.framework; sourceTree = "<group>"; };
+		AC79514911151F6B00F47E34 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MessageUI.framework; sourceTree = "<group>"; };
+		AC79514A11151F7300F47E34 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuartzCore.framework; sourceTree = "<group>"; };
+		AC86D0401112FB910076173E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		ACA12F4B10E5FBDF0044B9FA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		ACD4E5361090C26700B739F4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		ACD4F98F10E73FA2003A89B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ACD4F99310E73FBB003A89B0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		ACD4F99410E73FBB003A89B0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		ACFA845A1102F8CD00C78121 /* arrows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrows.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				AC07242E10902AAC00C46C5E /* CoreLocation.framework in Frameworks */,
+				AC5F531610DA750700C7BFB9 /* MapKit.framework in Frameworks */,
+				ACD4F99010E73FA2003A89B0 /* SystemConfiguration.framework in Frameworks */,
+				AC630A9F11093C37007BE6DB /* AddressBook.framework in Frameworks */,
+				AC86D0411112FB910076173E /* AddressBookUI.framework in Frameworks */,
+				AC79514B11151F7300F47E34 /* libAdMobDevice3_0.a in Frameworks */,
+				AC79514E11151F7400F47E34 /* AudioToolbox.framework in Frameworks */,
+				AC79514F11151F7400F47E34 /* MediaPlayer.framework in Frameworks */,
+				AC79515011151F7400F47E34 /* MessageUI.framework in Frameworks */,
+				AC79515111151F7400F47E34 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ACD4F99310E73FBB003A89B0 /* Reachability.h */,
+				ACD4F99410E73FBB003A89B0 /* Reachability.m */,
+				1D3623240D0F684500981E51 /* CompassAppDelegate.h */,
+				1D3623250D0F684500981E51 /* CompassAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* CompassViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* CompassViewController.m */,
+				AC5998C010FF650700F747B2 /* MyAnnotation.h */,
+				AC5998C110FF650700F747B2 /* MyAnnotation.m */,
+				AC5998C210FF650700F747B2 /* myConnection.h */,
+				AC5998C310FF650700F747B2 /* myConnection.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Navi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				AC79514011151F5500F47E34 /* AdMob */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Navi_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC4C65FA11149FA0004A40DE /* icon3030_62B.png */,
+				AC7451A811132F5E00A9265A /* icon3030_50B.png */,
+				AC76D87B110B73720077CB41 /* icon3030_64B.png */,
+				ACFA845A1102F8CD00C78121 /* arrows.png */,
+				AC1AF8341106E858007513EF /* icon3030_35.png */,
+				ACD4E5361090C26700B739F4 /* icon.png */,
+				2899E5210DE3E06400AC0155 /* CompassViewController.xib */,
+				AC1AF83A1106E9F6007513EF /* icon3030_35B.png */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Compass-Info.plist */,
+				ACA12F4B10E5FBDF0044B9FA /* Default.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC630A9711093C37007BE6DB /* AddressBook.framework */,
+				AC07242D10902AAC00C46C5E /* CoreLocation.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				AC5F531510DA750700C7BFB9 /* MapKit.framework */,
+				ACD4F98F10E73FA2003A89B0 /* SystemConfiguration.framework */,
+				AC417641110B1AB800510C96 /* SystemConfiguration.framework */,
+				AC86D0401112FB910076173E /* AddressBookUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC79514011151F5500F47E34 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				AC79514111151F5900F47E34 /* libAdMobDevice3_0.a */,
+				AC79514211151F5900F47E34 /* libAdMobSimulator3_0.a */,
+				AC79514311151F5900F47E34 /* AdMobDelegateProtocol.h */,
+				AC79514411151F5900F47E34 /* AdMobView.h */,
+				AC79514511151F5900F47E34 /* AdViewController.h */,
+				AC79514611151F5900F47E34 /* AdViewController.m */,
+				AC79514711151F5F00F47E34 /* AudioToolbox.framework */,
+				AC79514811151F6900F47E34 /* MediaPlayer.framework */,
+				AC79514911151F6B00F47E34 /* MessageUI.framework */,
+				AC79514A11151F7300F47E34 /* QuartzCore.framework */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Navi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Navi" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Navi;
+			productName = Compass;
+			productReference = 1D6058910D05DD3D006BFB54 /* Navi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Navi" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Navi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* CompassViewController.xib in Resources */,
+				ACD4E5371090C26700B739F4 /* icon.png in Resources */,
+				ACA12F4C10E5FBDF0044B9FA /* Default.png in Resources */,
+				ACFA845B1102F8CD00C78121 /* arrows.png in Resources */,
+				AC1AF8351106E858007513EF /* icon3030_35.png in Resources */,
+				AC1AF83B1106E9F6007513EF /* icon3030_35B.png in Resources */,
+				AC76D87C110B73720077CB41 /* icon3030_64B.png in Resources */,
+				AC7451A911132F5E00A9265A /* icon3030_50B.png in Resources */,
+				AC4C65FB11149FA0004A40DE /* icon3030_62B.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* CompassAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* CompassViewController.m in Sources */,
+				ACD4F99510E73FBB003A89B0 /* Reachability.m in Sources */,
+				AC5998C410FF650700F747B2 /* MyAnnotation.m in Sources */,
+				AC5998C510FF650700F747B2 /* myConnection.m in Sources */,
+				AC79514D11151F7400F47E34 /* AdViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/AdMob\"",
+					"\"$(SRCROOT)/AdMob\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Navi_Prefix.pch;
+				INFOPLIST_FILE = "Compass-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/AdMob\"",
+					"\"$(SRCROOT)/Classes/AdMob\"",
+				);
+				PRODUCT_NAME = Navi;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/AdMob\"",
+					"\"$(SRCROOT)/AdMob\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Navi_Prefix.pch;
+				INFOPLIST_FILE = "Compass-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/AdMob\"",
+					"\"$(SRCROOT)/Classes/AdMob\"",
+				);
+				PRODUCT_NAME = Navi;
+			};
+			name = Release;
+		};
+		ACD4E5451090C4B200B739F4 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Distribution;
+		};
+		ACD4E5461090C4B200B739F4 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/AdMob\"",
+					"\"$(SRCROOT)/AdMob\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Navi_Prefix.pch;
+				INFOPLIST_FILE = "Compass-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/AdMob\"",
+					"\"$(SRCROOT)/Classes/AdMob\"",
+				);
+				PRODUCT_NAME = Navi;
+			};
+			name = Distribution;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Navi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				ACD4E5461090C4B200B739F4 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Navi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				ACD4E5451090C4B200B739F4 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

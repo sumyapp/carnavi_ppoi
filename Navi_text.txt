@@ -1,0 +1,42 @@
+CarNavi ppoi
+
+car,navi,navigation,map,Satellite,free,road,world,compass,carnavigation,lite,drive,navigate,trapster
+カーナビ,車,car,navi,ナビゲーション,カー,地図,マップ,日本,車,無料,free,lite,全力案内,ナビ,いつも,ドライブ,drive,trapster
+
+
+This application is like car navigation.
+iPhone3G and 3GS, compatible.
+
+*The work of this application is accurate GPS information is required. Please use outside.
+
+Please start the app ride the car. Then, please run.
+Will then present a map of the location.
+
+The map is like a car navigation system, so that the rotation direction is always on.
+The current location address also appears.
+
+Has no search function. If you want such things, please purchase a real car navigation systems.
+
+Please look at a screenshot.
+car navigation like?
+
+this is free.
+Download now, Please!!
+
+--
+これは、カーナビっぽいアプリです。
+iPhone3Gと3GSに対応しています。
+
+※このアプリの動作には精度の高いGPS情報が必要です。外で使用して下さい。
+
+車に乗ったらこのアプリを起動して下さい。そして、走って下さい。
+そうすると、現在いる場所の地図が表示されます。
+また、地図はカーナビのように、進行方向が常に上になるように回転します。
+また、現在いる場所の住所も表示されます。
+
+経路検索機能などは持ちません。そういう物が欲しい方は本物のカーナビをご購入下さい。
+これは、「カーナビはいらないけど、あるとカッコいいな」みたいな方に使っていただきたいアプリです。
+動作画面のスクリーンショットを見てみてください。
+すごく、カーナビっぽいでしょう？
+
+無料なので、とりあえずダウンロードして、起動してみてくれると嬉しいです！
