@@ -14,7 +14,6 @@
 #import "MyAnnotation.h"
 #import "Reachability.h"
 #import "CJSONDeserializer.h"
-#import "AdView.h"
 
 #define PI 3.14159265358979323846264338327950288
 #define DRIVEMODE_KANKAKU 0.07
@@ -38,7 +37,6 @@
 	BOOL animationDidEnd;
 	//map系
 	IBOutlet MKMapView *mapview;
-	BOOL isActive;
 	
 	MKReverseGeocoder *reverseGeocoder;
 	MKPlacemark *placemark;
@@ -92,21 +90,19 @@
 	BOOL mapviewRottateBegin;
 	BOOL viewDidLoadEnd;
 	
-	AdView *lwebview;	
 	NSString *searchText;
+	
+	// Googleというロゴの位置を変更済みかどうか
+	BOOL isGoogleLogoPosDefault;
 }
-@property (nonatomic, retain) MKReverseGeocoder *reverseGeocoder;  
-@property (nonatomic, retain) MKPlacemark *placemark;
-@property (nonatomic, retain) CLLocationManager *locationManager;
-@property (nonatomic, retain) CLLocation *locationInfo;
-
 - (IBAction)backButtonPress;
 - (IBAction)searchButtonPress;
-
 - (IBAction)restartButtonPress;
 - (IBAction)peraButtonPress;
 - (IBAction)trashButtonPress;
 - (IBAction)refreshButtonPush;
+- (IBAction)setPinForCenterLocation;
+
 - (void)startNavi;
 - (void)stopNavi;
 - (void)pmGet;
@@ -145,8 +141,11 @@
 - (BOOL)getNowAnimating;
 - (void)setNowAnimating;
 - (void)setNowAnimatingEnd;
-- (IBAction)setPinForCenterLocation;
-//広告用
-- (void)startAd;
-- (void)adviewHide:(NSTimer*)timer;
+
+
+@property (nonatomic, retain) MKReverseGeocoder *reverseGeocoder;  
+@property (nonatomic, retain) MKPlacemark *placemark;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) CLLocation *locationInfo;
+@property BOOL isGoogleLogoPosDefault;
 @end

@@ -14,12 +14,8 @@
 @synthesize placemark;
 @synthesize locationManager;
 @synthesize locationInfo;
-
-- (void)startAd{
-	lwebview = [[AdView alloc] initWithFrame:CGRectMake(0,0,320,50)];
-	[lwebview setCurrentViewController:self];
-	[self.view addSubview:lwebview];	
-}
+@synthesize coordinate;
+@synthesize isGoogleLogoPosDefault;
 
 - (IBAction)setPinForCenterLocation{
 	setPinAnnotationStartPmGet = YES;	
@@ -28,7 +24,6 @@
 
 - (IBAction)searchButtonPress{
 	[UIView beginAnimations:nil context:NULL];
-	lwebview.frame = CGRectMake(0, 44, 320, 48);
 	LocationSearchBar.alpha  = 1.0;
 	[UIView commitAnimations];
 	[LocationSearchBar becomeFirstResponder];
@@ -39,28 +34,30 @@
 		[[ UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 	}
 	 */
-	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2f){
+		[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+	}
+	else{
+		[[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];
+	}
+	
 	[UIView beginAnimations:nil context:NULL];
 	toolbar.alpha  = 1.0;
 	addressView.alpha = 1.0;
-	lwebview.alpha = 1.0;
 	[UIView commitAnimations];
-	[NSTimer scheduledTimerWithTimeInterval:(25.0) 
-									 target:self selector:@selector(adviewHide:)
-								   userInfo:nil repeats:NO];
 }
 - (IBAction)trashButtonPress{
-	if(lwebview.alpha == 0){
+	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2f){
 		[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-		[UIView beginAnimations:nil context:NULL];
-		toolbar.alpha  = 0.0;
-		addressView.alpha = 0.0;
-		[UIView commitAnimations];
-		return;
+	}
+	else{
+		[[UIApplication sharedApplication] setStatusBarHidden:YES animated:YES];
 	}
 	[UIView beginAnimations:nil context:NULL];
-	lwebview.alpha = 0.0;
-	[UIView commitAnimations];	
+	toolbar.alpha  = 0.0;
+	addressView.alpha = 0.0;
+	[UIView commitAnimations];
+	return;
 }
 - (IBAction)restartButtonPress{
 	if(restartButtonIconStart){
@@ -113,11 +110,11 @@
 	self.locationManager = [[[CLLocationManager alloc] init] autorelease];
 
 	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0f){
-		//NSLog(@"%f", [[[UIDevice currentDevice] systemVersion] floatValue]);
+		//LOG(@"%f", [[[UIDevice currentDevice] systemVersion] floatValue]);
 		locationServicesEnabled = [CLLocationManager locationServicesEnabled];
 	}
 	else{
-		locationServicesEnabled = [locationManager locationServicesEnabled];
+		locationServicesEnabled = self.locationManager.locationServicesEnabled;
 	}
 	
     if (locationServicesEnabled) {  
@@ -157,7 +154,7 @@
 	if (geocoderWorking == YES) {
 		return;
 	}
-	//NSLog(@"pm_get_start");
+	//LOG(@"pm_get_start");
 	[actv startAnimating];
 	
 	geocoderWorking = YES;
@@ -238,7 +235,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {	
-	//NSLog([newLocation description]);
+	//LOG([newLocation description]);
 	self.locationInfo = newLocation;
 	//ここからマップ関連
 	//CLLocationCoordinate2D coordinate2 = newLocation.coordinate;
@@ -296,6 +293,12 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 	if(isnan(distance) != TRUE)
 		tmp = tmp - (distance * 1000);
 	if(tmp <= 0) {
+		// TODO
+		if(!self.isGoogleLogoPosDefault){
+			[[[mapview subviews] objectAtIndex:1] setFrame:CGRectMake(mapview.frame.origin.x, mapview.frame.origin.y, [[[mapview subviews] objectAtIndex:1] frame].size.width , [[[mapview subviews] objectAtIndex:1] frame].size.height)];
+			self.isGoogleLogoPosDefault = YES;
+		}
+		
 		mapviewRottateBegin = YES;
 		dir = [self azimuthCalc:latitude1
 					longtitude1:longitude1
@@ -384,7 +387,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 	NSAutoreleasePool* pool;
     pool = [[NSAutoreleasePool alloc]init];
 	
-	//NSLog(@"searchDo:%@",searchText);
+	//LOG(@"searchDo:%@",searchText);
 	
 	NSString *request = (NSString *) CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef) [NSString stringWithFormat:@"http://maps.google.co.jp/maps/geo?q=%@&output=json", searchText], NULL, NULL, kCFStringEncodingUTF8);
 	//request = [NSString stringWithFormat:@"http://maps.google.co.jp/maps/geo?q=%@&output=json", searchText];
@@ -397,8 +400,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 	NSData *jsonData = [jsonString dataUsingEncoding:NSUTF32BigEndianStringEncoding];
 	NSDictionary *jsonDic = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:nil];
 	NSArray *jsonArray = [[[jsonDic objectForKey:@"Placemark"] retain] autorelease];
-	//NSLog(@"%@", [jsonDic description]);
-	//NSLog(@"%@", [jsonArray description]);
+	//LOG(@"%@", [jsonDic description]);
+	//LOG(@"%@", [jsonArray description]);
 	
 	for (NSDictionary *dic in jsonArray) {
 		if([dic objectForKey:@"address"] != nil){
@@ -408,8 +411,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 				_location.longitude =  [[[[dic objectForKey:@"Point"] objectForKey:@"coordinates"] objectAtIndex:0] floatValue];
 				_location.latitude = [[[[dic objectForKey:@"Point"] objectForKey:@"coordinates"] objectAtIndex:1] floatValue];
 				
-				NSLog(@"%@",[dic objectForKey:@"address"]);
-				NSLog(@"coordinates:%f",  _location.longitude, _location.latitude);
+				LOG(@"%@",[dic objectForKey:@"address"]);
+				LOG(@"coordinates:%f",  _location.longitude, _location.latitude);
 				[self addAnnotation:_location title:[dic objectForKey:@"address"] subtitle:nil];
 			}
 		}
@@ -425,11 +428,10 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 }
 	
 - (void)searchDidEnd{
-	NSLog(@"searchDidEnd");
+	LOG(@"searchDidEnd");
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	[UIView beginAnimations:nil context:NULL];
 	LocationSearchBar.alpha = 0.0;
-	lwebview.frame = CGRectMake(0, 0, 320, 48);
 	[UIView commitAnimations];
 	
 	if (serchLocationFound == NO){
@@ -460,7 +462,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 	[searchBar resignFirstResponder];
 	[UIView beginAnimations:nil context:NULL];
 	LocationSearchBar.alpha = 0.0;
-	lwebview.frame = CGRectMake(0, 0, 320, 48);
 	[UIView commitAnimations];
 	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 	[defaults setObject:LocationSearchBar.text forKey:@"searchLocation"];
@@ -474,7 +475,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	[UIView beginAnimations:nil context:NULL];
 	LocationSearchBar.alpha = 0.0;
-	lwebview.frame = CGRectMake(0, 0, 320, 48);
 	[UIView commitAnimations];
 	// 画面中央の処理中インジケータ表示OFF
 	if (serchLocationFound == NO){
@@ -515,7 +515,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	// これがユーザの位置の場合は、単にnilを返す
 	if ([annotation isKindOfClass:[MKUserLocation class]]){
-		NSLog(@"tttttttt");
+		LOG(@"tttttttt");
 		if(inJp){
 			[(MKUserLocation*)annotation setTitle:@"現在地"];
 		}
@@ -629,9 +629,9 @@ calloutAccessoryControlTapped:(UIControl*)control
 		}
 	}
 	else if(alertNum == SETADDRESSBOOK){
-		NSLog(@"%d", buttonIndex);
+		LOG(@"%d", buttonIndex);
 		if (buttonIndex == 1) {
-			NSLog(@"test");
+			LOG(@"test");
 			LocationSearchBar.text = alertView.title;
 			[self dismissModalViewControllerAnimated:YES];
 			nearAnnotationDist = 0;
@@ -797,26 +797,13 @@ calloutAccessoryControlTapped:(UIControl*)control
 		[self stopNavi];
     }
 	else {
-		[self startAd];
 		NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 		LocationSearchBar.text = [defaults stringForKey:@"searchLocation"];
 		[self startNavi];
 	}
 	viewDidLoadEnd = YES;
-	[NSTimer scheduledTimerWithTimeInterval:(25.0) 
-									 target:self selector:@selector(adviewHide:)
-								   userInfo:nil repeats:NO];
+}
 
-}
-- (void)adviewHide:(NSTimer*)timer{
-	if(lwebview.alpha == 0)
-		return;
-	[UIView beginAnimations:nil context:NULL];
-	//[UIView setAnimationDuration:2.0];
-	lwebview.alpha = 0.0;
-	[UIView commitAnimations];
-	//[timer release];
-}
 // プレースマークが取得できた場合の処理  
 - (void)reverseGeocoder:(MKReverseGeocoder *)geocoder   
     didFindPlacemark:(MKPlacemark *)pm {
@@ -855,21 +842,22 @@ calloutAccessoryControlTapped:(UIControl*)control
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-	//NSLog(@"2");
+	//LOG(@"2");
 	[self setNowAnimating];
 }
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
-	//NSLog(@"4");
+	//LOG(@"4");
 	[self setNowAnimatingEnd];
-	//NSLog(@"-----------------");
+	//LOG(@"-----------------");
 }
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-	//NSLog(@"3");
+	//LOG(@"3");
 	//if (tateOn == YES) {
 	switch (toInterfaceOrientation) {
 		case UIInterfaceOrientationPortrait:
 			mapview.frame = CGRectMake(-190, -120, 700, 700);
 			[[[mapview subviews] objectAtIndex:1] setFrame:CGRectMake(195, 510, [[[mapview subviews] objectAtIndex:1] frame].size.width , [[[mapview subviews] objectAtIndex:1] frame].size.height)];
+			self.isGoogleLogoPosDefault = NO;
 			backButton.frame = CGRectMake(5, 422, 33, 33);
 			arrow.frame = CGRectMake(290, 0, 20, 40);
 			targetDist.frame = CGRectMake(269, 34, 51, 21);
@@ -880,6 +868,7 @@ calloutAccessoryControlTapped:(UIControl*)control
 		case UIInterfaceOrientationPortraitUpsideDown:
 			mapview.frame = CGRectMake(-190, -120, 700, 700);
 			[[[mapview subviews] objectAtIndex:1] setFrame:CGRectMake(195, 510, [[[mapview subviews] objectAtIndex:1] frame].size.width , [[[mapview subviews] objectAtIndex:1] frame].size.height)];
+			self.isGoogleLogoPosDefault = NO;
 			backButton.frame = CGRectMake(5, 422, 33, 33);
 			arrow.frame = CGRectMake(290, 0, 20, 40);
 			targetDist.frame = CGRectMake(269, 34, 51, 21);
@@ -890,6 +879,7 @@ calloutAccessoryControlTapped:(UIControl*)control
 		default:
 			mapview.frame = CGRectMake(-110, -150, 700, 700);
 			[[[mapview subviews] objectAtIndex:1] setFrame:CGRectMake(120, 380, [[[mapview subviews] objectAtIndex:1] frame].size.width , [[[mapview subviews] objectAtIndex:1] frame].size.height)];
+			self.isGoogleLogoPosDefault = NO;
 			backButton.frame = CGRectMake(6, 262, 33, 33);
 			arrow.frame = CGRectMake(450, 0, 20, 40);
 			targetDist.frame = CGRectMake(429, 34, 51, 21);
@@ -926,19 +916,19 @@ calloutAccessoryControlTapped:(UIControl*)control
  */
 }
 - (BOOL)getNowAnimating{
-	//NSLog(@"getNowAnimating");
+	//LOG(@"getNowAnimating");
 	return rotateNow;
 }
 - (void)setNowAnimating{
-	//NSLog(@"setNowAnimatingStart");
+	//LOG(@"setNowAnimatingStart");
 	rotateNow = YES;
 }
 - (void)setNowAnimatingEnd{
-	//NSLog(@"setNowAnimatingEnd");
+	//LOG(@"setNowAnimatingEnd");
 	rotateNow = NO;
 }
 - (void)searchBarBookmarkButtonClicked:(UISearchBar *) searchBar{
-	//	NSLog(@"test");
+	//	LOG(@"test");
     ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
 	//[picker setDisplayedProperties:[NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonAddressCityKey]]];
     picker.peoplePickerDelegate = self;
@@ -958,11 +948,9 @@ calloutAccessoryControlTapped:(UIControl*)control
 	  shouldContinueAfterSelectingPerson:(ABRecordRef)person
 								property:(ABPropertyID)property
 							  identifier:(ABMultiValueIdentifier)identifier{
-	id theProperty = (id)ABRecordCopyValue(person, property);
 	int propertyType = ABPersonGetTypeOfProperty(property);
 	if(propertyType == kABMultiDictionaryPropertyType){
-		NSDictionary *items = [(NSArray *)ABMultiValueCopyArrayOfAllValues(theProperty) objectAtIndex:identifier];
-		[theProperty release];
+		NSDictionary *items = [[(NSArray *)ABMultiValueCopyArrayOfAllValues((id)ABRecordCopyValue(person, property)) objectAtIndex:identifier] retain];
 		NSString *tmp = [NSString stringWithFormat:@""];
 		if([items objectForKey:@"State"] != nil){
 			tmp = [NSString stringWithFormat:@"%@", [items objectForKey:@"State"]];
@@ -998,14 +986,11 @@ calloutAccessoryControlTapped:(UIControl*)control
 		[alert release];
 		//[items release];
 	}
-	else {
-		[theProperty release];
-	}
 	
 	return NO;
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	//NSLog(@"1");
+	//LOG(@"1");
 	//if([self getNowAnimating] == YES || restartButtonIconStart == NO){
 	//	return NO;
 	//}
