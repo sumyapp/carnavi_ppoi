@@ -25,7 +25,7 @@
 @class Reachability;
 
 
-@interface CompassViewController : UIViewController <MKReverseGeocoderDelegate, CLLocationManagerDelegate, MKMapViewDelegate, MKAnnotation, UIActionSheetDelegate, UIAlertViewDelegate, ABPeoplePickerNavigationControllerDelegate, NSXMLParserDelegate> {
+@interface CompassViewController : UIViewController <MKReverseGeocoderDelegate, CLLocationManagerDelegate, MKMapViewDelegate, MKAnnotation, UIActionSheetDelegate, UIAlertViewDelegate, ABPeoplePickerNavigationControllerDelegate> {
 	CLLocationManager *locationManager;
     CLLocation *locationInfo;  
 	
