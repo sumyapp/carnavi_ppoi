@@ -15,7 +15,6 @@
 @synthesize locationManager;
 @synthesize locationInfo;
 @synthesize coordinate;
-@synthesize isGoogleLogoPosDefault;
 
 - (IBAction)setPinForCenterLocation{
 	setPinAnnotationStartPmGet = YES;	
@@ -292,13 +291,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 	int tmp = 20;
 	if(isnan(distance) != TRUE)
 		tmp = tmp - (distance * 1000);
-	if(tmp <= 0) {
-		// TODO
-		if(!self.isGoogleLogoPosDefault){
-			[[[mapview subviews] objectAtIndex:1] setFrame:CGRectMake(mapview.frame.origin.x, mapview.frame.origin.y, [[[mapview subviews] objectAtIndex:1] frame].size.width , [[[mapview subviews] objectAtIndex:1] frame].size.height)];
-			self.isGoogleLogoPosDefault = YES;
-		}
-		
+	if(tmp <= 0) {		
 		mapviewRottateBegin = YES;
 		dir = [self azimuthCalc:latitude1
 					longtitude1:longitude1
@@ -857,7 +850,6 @@ calloutAccessoryControlTapped:(UIControl*)control
 		case UIInterfaceOrientationPortrait:
 			mapview.frame = CGRectMake(-190, -120, 700, 700);
 			[[[mapview subviews] objectAtIndex:1] setFrame:CGRectMake(195, 510, [[[mapview subviews] objectAtIndex:1] frame].size.width , [[[mapview subviews] objectAtIndex:1] frame].size.height)];
-			self.isGoogleLogoPosDefault = NO;
 			backButton.frame = CGRectMake(5, 422, 33, 33);
 			arrow.frame = CGRectMake(290, 0, 20, 40);
 			targetDist.frame = CGRectMake(269, 34, 51, 21);
@@ -868,7 +860,6 @@ calloutAccessoryControlTapped:(UIControl*)control
 		case UIInterfaceOrientationPortraitUpsideDown:
 			mapview.frame = CGRectMake(-190, -120, 700, 700);
 			[[[mapview subviews] objectAtIndex:1] setFrame:CGRectMake(195, 510, [[[mapview subviews] objectAtIndex:1] frame].size.width , [[[mapview subviews] objectAtIndex:1] frame].size.height)];
-			self.isGoogleLogoPosDefault = NO;
 			backButton.frame = CGRectMake(5, 422, 33, 33);
 			arrow.frame = CGRectMake(290, 0, 20, 40);
 			targetDist.frame = CGRectMake(269, 34, 51, 21);
@@ -879,7 +870,6 @@ calloutAccessoryControlTapped:(UIControl*)control
 		default:
 			mapview.frame = CGRectMake(-110, -150, 700, 700);
 			[[[mapview subviews] objectAtIndex:1] setFrame:CGRectMake(120, 380, [[[mapview subviews] objectAtIndex:1] frame].size.width , [[[mapview subviews] objectAtIndex:1] frame].size.height)];
-			self.isGoogleLogoPosDefault = NO;
 			backButton.frame = CGRectMake(6, 262, 33, 33);
 			arrow.frame = CGRectMake(450, 0, 20, 40);
 			targetDist.frame = CGRectMake(429, 34, 51, 21);

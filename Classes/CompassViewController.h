@@ -91,9 +91,6 @@
 	BOOL viewDidLoadEnd;
 	
 	NSString *searchText;
-	
-	// Googleというロゴの位置を変更済みかどうか
-	BOOL isGoogleLogoPosDefault;
 }
 - (IBAction)backButtonPress;
 - (IBAction)searchButtonPress;
@@ -147,5 +144,4 @@
 @property (nonatomic, retain) MKPlacemark *placemark;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) CLLocation *locationInfo;
-@property BOOL isGoogleLogoPosDefault;
 @end
